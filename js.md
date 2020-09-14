@@ -8,6 +8,25 @@
    + 问题一: 当原型链中包含引用类型值的原型时,该引用类型值会被所有实例共享;
    + 问题二: 在创建子类型(例如创建Son的实例)时,不能向超类型(例如Father)的构造函数中传递参数.
 
+## Function和Objection的原型和原型链
+```js
+Object.__proto__ === Function.prototype    //ture
+Function.__proto__ === Function.prototype    //ture
+Function.__proto__ === Object.prototype    //false
+Function.prototype.__proto__ === Object.prototype    //true
+
+
+function Person(){};
+ console.log(Person.prototype) //Person{}
+ console.log(typeof Person.prototype) //Object
+ console.log(typeof Function.prototype) // Function，这个特殊
+ console.log(typeof Object.prototype) // Object
+ console.log(typeof Function.prototype.prototype) //undefined
+
+
+
+```
+
 [JS原型链与继承别再被问倒了](https://juejin.im/post/6844903475021627400#heading-1)
 
 ---
@@ -26,7 +45,7 @@
 + macro-task(宏任务)：包括整体代码script，setTimeout，setInterval
 + micro-task(微任务)：Promise，process.nextTick
 
-[这一次，彻底弄懂 JavaScript 执行机制](https://juejin.im/post/6844903512845860872)
+[这一次，彻底弄懂JS执行机制（Event Loop）](https://juejin.im/post/6844903625500655629)
 
 ---
 
