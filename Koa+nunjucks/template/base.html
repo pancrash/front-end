@@ -22,8 +22,14 @@
         </nav>
 
         <div id="user">
+            {% if (user.id) %}
+            <a href="/user">{{user.username}}</a>
+            <a href="/addItem">添加新商品</a>
+            <a href="/upload">上传文件</a>
+            {% else %}
             <a href="/login">登录</a>
             <a href="/register">注册</a>
+            {% endif %}
         </div>
     </header>
 

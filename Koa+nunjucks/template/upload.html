@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div id="main">
+
+    <!--
+        application/x-www-form-urlencoded
+        multipart/form-data
+        text/plain
+    -->
+
+    <div id="login" class="panel">
+        <h2>上传文件</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-item">
+                <label>
+                    <span class="txt">选择文件：</span>
+                    <button class="form-button primary" id="fileBtn">点击选择</button>
+                    <input style="display: none" type="file" id="file" name="file" />
+                </label>
+            </div>
+            <div class="form-item">
+                <label>
+                    <span class="txt"></span>
+                    <button type="submit" class="form-button primary">确定上传</button>
+                </label>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<script>
+    let fileBtnElement = document.querySelector('#fileBtn');
+    let fileElement = document.querySelector('#file');
+
+    fileBtnElement.onclick = function(e) {
+        // 避免表单提交
+        e.preventDefault();
+
+        // 触发 fileElement 的点击
+        fileElement.click();
+    }
+</script>
+{% endblock %}

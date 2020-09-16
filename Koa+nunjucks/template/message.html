@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div id="main">
+
+    <div class="panel">
+        <h2>提示</h2>
+        <div>
+            <h4>{{message}}</h4>
+            <p>
+                <a id="a" href="{{url}}"></a>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    let aElement = document.querySelector('#a');
+    let t = 3;
+
+    (function goto() {
+        t--;
+        if (t < 0) {
+            window.location.href = '{{url}}';
+        } else {
+            aElement.innerHTML = `${t} 秒以后自动跳转，或者点击这里立即跳转`;
+            setTimeout(goto, 1000);
+        }
+    })()
+</script>
+{% endblock %}
