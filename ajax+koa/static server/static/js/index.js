@@ -6,10 +6,16 @@ let contentListElement = document.querySelector('#contentList');
 let usernameElement = document.querySelector('#username');
 let passwordElement = document.querySelector('#password');
 let loginBtnElement = document.querySelector('#loginBtn');
+let loginFormBtnElement = document.querySelector('#loginFormBtn');
+let loginFormElement = document.querySelector('#loginForm');
 
 const baseURL = axios.defaults.baseURL = '/api';
 axios.defaults.headers.common['Authorization'] = localStorage.getItem('token')
-getPhotos();
+
+
+loginFormBtnElement.onclick = function () {
+    loginFormElement.style.display = 'block';
+}
 
 uploadBtnElement.onclick = function () {
     attachmentElement.click();
@@ -136,6 +142,8 @@ loginBtnElement.onclick = async function () {
         alert(data.message);
     } else {
         localStorage.setItem('token', authorization);
+        loginFormElement.style.display = 'none';
+        getPhotos();
     }
 }
 

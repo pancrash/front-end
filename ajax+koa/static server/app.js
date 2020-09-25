@@ -9,7 +9,6 @@ app.use(koaServerHttpProxy('/api', {
     pathRewrite: {
         '^/api': ''
     }
-    // http://localhost:8888/getUsers
 }))
 
 app.use(KoaStaticCache({

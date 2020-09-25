@@ -3,9 +3,8 @@ const KoaRouter = require('koa-router');
 const KoaBody = require('koa-body');
 const KoaStaticCache = require('koa-static-cache');
 const mysql = require('mysql2');
-// const jwt = require('jsonwebtoken')
-const jwt = require('koa-jwt')
-// 创建一个mysql的链接对象
+const jwt = require('jsonwebtoken')
+
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
@@ -28,8 +27,7 @@ function query(sql, values) {
 const app = new Koa();
 const router = new KoaRouter();
 
-const secret = 'pancras';
-app.use(jwt({ secret }).unless({ path: [/^\/public|\/upload/] }));
+
 
 app.use(KoaStaticCache(
     {
