@@ -24,39 +24,6 @@ export default class Vue{
             }
         })
     }
-
-
-    // 观察数据
-    // observe(data){
-    //     let keys = Object.keys(data);
-    //     keys.forEach(key=>{
-    //         let value = data[key]
-    //         let _this = this;
-    //         let dep = new Dep();
-    //         Object.defineProperty(data,key,{
-    //             configurable:true,
-    //             enumerable:true,
-    //             get(){
-    //                 console.log("get...");
-    //                 // 收集订阅者；
-    //                 // dep.addSub(new Watcher(()=>{
-    //                 //     console.log("执行了");
-    //                 // }))
-    //                 if(Dep.target){
-    //                     dep.addSub(Dep.target);
-    //                 }
-    //                 // data[key] ---触发get --- data[key]
-    //                 return value;
-    //             },
-    //             set(newValue){
-    //                 console.log(dep);
-    //                 // 发布；
-    //                 dep.notify(newValue);
-    //                 value = newValue;
-    //             }
-    //         })
-    //     })
-    // }
     compile(){
         // 作用域；
         let el = document.querySelector(this.opts.el)
@@ -121,8 +88,6 @@ export default class Vue{
                             let reg = new RegExp(oldValue,"g");
                             node.textContent = node.textContent.replace(reg,newValue);
                     })
-
-
                }
             }
         })
