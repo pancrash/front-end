@@ -1,24 +1,5 @@
 ## 简版mvvm框架实现
 
-##课堂主题
-
-- 1.利用defineProperty实现数据劫持;
-- 2.利用ES6中proxy实现数据劫持
-- 3.mvvm框架中编译数据到视图
-- 4.实现数据驱动视图更新；
-- 5.发布订阅模式；
-- 6.AMD模块化require.js介绍；
-
-##知识点
-
-- defineProperty；
-- Proxy代理
-- 数据劫持
-- es6模块化、exports 和 import
-- AMD /CMD模块化；
-
-
-
 ### defineProperty
 
 ```js
@@ -160,8 +141,4 @@ Object.defineProperty(obj,'name',{
 - Proxy代理
 - 数据劫持
 - AMD /CMD模块化；
-
-## 下节预告
-
-- git
 

@@ -65,7 +65,7 @@ class Vue {
                         node.innerHTML = this._data[attrValue];
                         new Watcher(this._data, attrValue, (newValue) => {
                             node.innerHTML = newValue;
-                        })//暗号：空调
+                        })
                     }
                 })
                 if (node.childNodes.length > 0) {
